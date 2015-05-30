@@ -1,0 +1,9 @@
+[Core]
+Name = FSMK
+Module = fsmk
+
+[Documentation]
+Author = Akshay S Dinesh
+Version = 0.1
+Website = https://github.com/asdofindia/telegram-pybot
+Description = telegram-pybot's fsmk bot
