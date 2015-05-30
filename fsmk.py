@@ -14,7 +14,7 @@ class FSMKPlugin(plugintypes.TelegramPlugin):
         "^/feed$":"get_planet",
         "^/updates$":"get_updates",
         "^/task$":"get_tasks",
-        ".*\s?(f|F)ree\s?.*":"free_freedom",
+        "(.*\s)?(f|F)ree(\s.*)?":"free_freedom",
     }
 
     usage = [
