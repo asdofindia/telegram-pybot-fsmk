@@ -5,5 +5,5 @@ Module = fsmk
 [Documentation]
 Author = Akshay S Dinesh
 Version = 0.1
-Website = https://github.com/asdofindia/telegram-pybot
-Description = telegram-pybot's fsmk bot
+Website = https://github.com/asdofindia/telegram-pybot-fsmk
+Description = FSMK tools for Telegram

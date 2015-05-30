@@ -1,0 +1,9 @@
+{
+    "name": "FSMK",
+    "description": "FSMK tools for Telegram",
+    "version": "0.1",
+    "default_enable": ["FSMK"],
+    "homepage": "https://github.com/asdofindia/telegram-pybot-fsmk",
+    "repo": "https://github.com/asdofindia/telegram-pybot-fsmk.git",
+    "branch": "master"
+}
