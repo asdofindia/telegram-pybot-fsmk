@@ -1,8 +1,6 @@
 import plugintypes
 import tgl
-from telegrambot import auth
 from telegrambot.utils.decorators import group_only
-from datetime import datetime
 import requests
 from bs4 import BeautifulSoup
 
@@ -19,12 +17,6 @@ class FSMKPlugin(plugintypes.TelegramPlugin):
         ".* free .*":"free_freedom",
         "^free .*": "free_freedom",
         ".*free$": "free_freedom",
-        #"^!quote$": "get_random_quote",
-        #"^!addquote (.*)": "add_quote",
-        #"^!quotethis$": "add_reply",
-        #"^!delquote ([0-9]+)$": "del_quote",
-        #"^!getquote ([0-9]+)$": "get_quote",
-        #"^!findquote (.*)": "find_quote",
     }
 
     usage = [
