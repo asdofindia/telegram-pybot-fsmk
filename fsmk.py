@@ -3,6 +3,7 @@ import tgl
 from telegrambot.utils.decorators import group_only
 import requests
 from bs4 import BeautifulSoup
+import duckduckgo as ddg
 
 
 class FSMKPlugin(plugintypes.TelegramPlugin):
@@ -15,12 +16,14 @@ class FSMKPlugin(plugintypes.TelegramPlugin):
         "^/updates$":"get_updates",
         "^/task$":"get_tasks",
         r".*\b(f|F)ree\b(?! beer| drinks).*":"free_freedom",
+        "^/ddg $": "ddg_search",
     }
 
     usage = [
         "/feed: pull content from planet",
         "/updates: pull updates from fsmk.org",
         "/task: get task list",
+        "/ddg search_term: get search result",
     ]
 
     def __init__(self):
@@ -57,3 +60,10 @@ class FSMKPlugin(plugintypes.TelegramPlugin):
     @group_only
     def free_freedom(self, msg, matches):
         return "(as in freedom)"
+
+    @group_only
+    def ddg_search(self, msg, matches):
+        try:
+            return ddg.get_zci(msg[5:])            
+        except ValueError:
+            pass
