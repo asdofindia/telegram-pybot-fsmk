@@ -1,11 +1,11 @@
-import plugintypes
+from telegrambot import plugin
 import tgl
 from telegrambot.utils.decorators import group_only
 import requests
 from bs4 import BeautifulSoup
 
 
-class FSMKPlugin(plugintypes.TelegramPlugin):
+class FSMKPlugin(plugin.TelegramPlugin):
     """
     FSMK tasks
     """
@@ -27,7 +27,6 @@ class FSMKPlugin(plugintypes.TelegramPlugin):
         super().__init__()
 
 
-    @group_only
     def get_planet(self, msg, matches):
         soup = BeautifulSoup(requests.get("http://fsmk.org/planet/").text)
         posts = soup.findAll('li', {"class":"odd"})
@@ -36,7 +35,6 @@ class FSMKPlugin(plugintypes.TelegramPlugin):
             text+="* %s by %s %s\n" % (post.div.a.text, post.find('div', {"class":"name"}).a.text, post.div.a['href'])
         return text
 
-    @group_only
     def get_updates(self, msg, matches):
         soup = BeautifulSoup(requests.get("http://fsmk.org/").text)
         posts = soup.findAll('a')
@@ -50,10 +48,8 @@ class FSMKPlugin(plugintypes.TelegramPlugin):
                 updcount += 1
         return text
 
-    @group_only
     def get_tasks(self, msg, matches):
         return "Tasks pad not defined yet"
 
-    @group_only
     def free_freedom(self, msg, matches):
         return "(as in freedom)"
