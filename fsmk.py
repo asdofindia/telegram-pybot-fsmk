@@ -1,11 +1,11 @@
-from telegrambot import plugin
+from telex import plugin
 import tgl
 from telegrambot.utils.decorators import group_only
 import requests
 from bs4 import BeautifulSoup
 
 
-class FSMKPlugin(plugin.TelegramPlugin):
+class FSMKPlugin(plugin.TelexPlugin):
     """
     FSMK tasks
     """
