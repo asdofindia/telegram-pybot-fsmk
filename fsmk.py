@@ -1,6 +1,6 @@
 from telex import plugin
 import tgl
-from telegrambot.utils.decorators import group_only
+from telex.utils.decorators import group_only
 import requests
 from bs4 import BeautifulSoup
 
